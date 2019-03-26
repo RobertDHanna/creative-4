@@ -11,4 +11,11 @@ export default {
 </script>
 
 <style>
+html {
+  overflow: hidden;
+}
+.hero-body {
+  overflow: auto;
+  height: 100px;
+}
 </style>

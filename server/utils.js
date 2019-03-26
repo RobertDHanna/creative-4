@@ -1,6 +1,6 @@
-export const makeID = () => {
+exports.makeID = () => {
   return (
-    "_" +
+    "YEET" +
     Math.random()
       .toString(36)
       .substr(2, 9)
