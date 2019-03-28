@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-info is-fullheight">
+  <section class="hero is-primary is-fullheight">
     <div class="BV--hero-body hero-body">
       <h1 class="blog-header">{{this.$route.params.id}}</h1>
       <hr class="blog-header-hr">

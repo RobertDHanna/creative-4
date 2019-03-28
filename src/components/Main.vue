@@ -64,19 +64,23 @@ export default {
           })
         }).then(r => r.json());
         if (result.error) {
-          console.log("yikes");
+          this.$router.app.$emit(
+            "error-message",
+            "Yikes, something bad happened."
+          );
         } else {
           this.userSlug = result.slug;
           this.customId = result.customId;
         }
       } else {
-        console.log("nope");
+        this.$router.app.$emit("error-message", "Blog names can't be empty!");
       }
     }
   },
   computed: {
     blogSlug: function() {
       const slug = this.previewLink
+        .toLowerCase()
         .replace(/[^a-z0-9 -]/g, "")
         .replace(/\s+/g, "-")
         .replace(/-+/g, "-");

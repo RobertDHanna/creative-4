@@ -101,10 +101,18 @@ export default {
       });
     },
     createBlogPost: async function() {
+      if (this.blogTitle.length === 0) {
+        this.$router.app.$emit("error-message", "Blog titles can't be empty!");
+        return;
+      }
+      if (document.querySelector("#editor").textContent.length === 0) {
+        this.$router.app.$emit("error-message", "Your blog can't be empty!");
+        return;
+      }
+      const html = document.querySelector("#editor").innerHTML;
       const userId = this.$route.params.id;
       const title = this.blogTitle;
       const delta = this.quill.getContents();
-      const html = document.querySelector("#editor").innerHTML;
       let data = {
         userId,
         title,
@@ -183,8 +191,10 @@ export default {
   background-color: white;
   border-radius: 15px;
   margin: 10px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .edit-button {
   margin-left: 10px;
@@ -195,7 +205,7 @@ export default {
 }
 .blog-title {
   padding-left: 10px;
-  font-size: 16px;
+  font-size: 35px;
   color: black;
   word-wrap: break-word;
 }

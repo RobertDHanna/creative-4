@@ -1,12 +1,18 @@
 <template>
   <div id="app">
+    <message/>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Message from "./components/Message.vue";
+
 export default {
-  name: "app"
+  name: "app",
+  components: {
+    Message
+  }
 };
 </script>
 
