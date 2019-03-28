@@ -207,7 +207,7 @@ export default {
   padding-left: 10px;
   font-size: 35px;
   color: black;
-  word-wrap: break-word;
+  word-break: break-all;
 }
 .BC--hero-body {
   align-items: flex-start !important;
